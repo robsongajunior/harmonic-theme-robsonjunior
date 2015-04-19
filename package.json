@@ -1,0 +1,21 @@
+{
+  "name": "harmonic-theme-robsonjunior",
+  "version": "0.0.1",
+  "description": "Robson Junior Harmonic theme",
+  "keywords": [
+    "harmonictheme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/es6rocks/harmonic-theme-robsonjunior.git"
+  },
+  "author": "Robson Júnior <robson.ga.junior@gmail.com> (http://robsonjunior.cc)",
+  "contributors": [
+    "Robson Júnior <robson.ga.junior@gmail.com> (http://robsonjunior.cc)"
+  ],
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/robsongajunior/harmonic-theme-robsonjunior/issues"
+  },
+  "homepage": "https://github.com/robsongajunior/harmonic-theme-robsonjunior"
+}

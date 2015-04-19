@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    
+    <title>{{post.metadata.title}} - {{config.title}}</title>
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="twitter:creator"    content="{{config.author}}" />
+
+    <meta property="og:image"       content="{{config.domain}}/img/profile/robsonjunior.jpg" />
+    <meta property="og:url"         content="{{config.domain}}/{{post.metadata.link}}" />
+    <meta property="og:title"       content="{{config.name}} - {{post.metadata.title}}" />
+    <meta property="og:description" content="{{post.metadata.description}}" />
+
+    <link rel="canonical" href="{{config.domain}}" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/vendor/prism.css" />
+</head>
+<body id="single">
+
+    {% include "partials/header.html" %}
+
+    <figure id="mainBanner" class="main-banner internal-banner" data-banner-src="{{post.metadata.cover}}" data-banner-alt="{post.metadata.coverAlt}}">
+        <figcaption> <h2 id="titleBlur" class="title">{{post.metadata.title}}</h2> </figcaption>
+    </figure>
+
+    <main id="main">
+        <section class="single-page wrap-content">
+            <article class="postContent">{{post.content}}</article>
+
+            <ul class="categories">
+                {% for category in post.metadata.categories %}
+                    <li>
+                        <a class="categoryTag {{ category }}" href="/categories/{% if post.metadata.default_lang %}{{ post.metadata.lang }}/{% endif %}{{ category | lower | trim }}">
+                            {{category}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="sntw-wraper postContent">
+                <h3 class="title-med">Compartilhar</h3>
+                
+                <ul class="article-share">
+                    <li><a class="icon fb-share btn-share" title="Facebook"     href="https://www.facebook.com/sharer.php?u={{config.domain}}/{{post.metadata.link}}"></a></li>
+                    <li><a class="icon tt-share btn-share" title="Tweeter"      href="https://twitter.com/intent/tweet?url={{config.domain}}/{{post.metadata.link}}"></a></li>
+                    <li><a class="icon gp-share btn-share" title="Google Plus"  href="https://plus.google.com/share?url={{config.domain}}/{{post.metadata.link}}"></a></li>
+                </ul>
+            </div>
+            <div class="postContent"> {% include "partials/disqus.html" %} </div>
+        </section>
+
+        <div class="clearfix"></div>
+    </main>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

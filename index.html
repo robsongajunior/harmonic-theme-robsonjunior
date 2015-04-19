@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>{{ config.title }}</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="twitter:creator"    content="{{config.author}}" />
+
+    <meta property="og:image"       content="{{config.domain}}/img/profile/robsonjunior.jpg" />
+    <meta property="og:url"         content="{{config.domain}}/{{post.metadata.link}}" />
+    <meta property="og:title"       content="{{config.name}}" />
+    <meta property="og:description" content="{{config.description}}" />
+
+    <link rel="canonical" href="{{config.domain}}" />
+    
+    <link rel="stylesheet" href="/css/vendor/prism.css" />
+    <link rel="stylesheet" href="/css/main.css" />    
+</head>
+<body>
+    {% include "partials/header.html" %}
+
+    <figure id="mainBanner" class="main-banner internal-banner" data-banner-src="/img/main-banner.jpg" data-banner-alt="Robson Junior Cover | Javascript"> </figure>
+
+    <main id="main">
+        {% include "partials/profileBar.html" %}
+
+        <section id="posts" class="posts wrap-content">
+            {% for post in posts %}
+                <article class="post">
+                    <ul class="post-info" date="{{ post.date }}"></ul>
+                    <div class="post-content">
+                        <a class="post-title" href="/{{post.link}}">{{post.title}}</a>
+                        <div class="post-excerpt">{{post.content}}</div>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+
+        <div class="clearfix"></div>
+    </main>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>
