@@ -7,15 +7,30 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta name="twitter:creator"    content="{{config.author}}" />
+    <!-- Core Meta Data -->
+    <meta name="author" content="{{config.author}}">
+    <meta name="description" content="{{config.description}}">
+    <meta name="keywords" content="Robson Júnior, carreira, palestras, javascript, JS, ECMAScript, ES6, Harmonic, front-end">
 
-    <meta property="og:image"       content="{{config.domain}}/img/profile/robsonjunior.jpg" />
-    <meta property="og:url"         content="{{config.domain}}/{{post.metadata.link}}" />
-    <meta property="og:title"       content="{{config.name}}" />
-    <meta property="og:description" content="{{config.description}}" />
+    <!-- O.G -->
+    <meta property="og:description" content="{{config.description}}">
+    <meta property="og:image" content="{{config.domain}}/images/share/profile-robsongajunior.jpg">
+    <meta property="og:site_name" content="robsonjunior">
+    <meta property="og:title" content="Robson Júnior">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{config.domain}}">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{config.domain}}">
+    <meta name="twitter:creator" content="@robsongajunior">
+    <meta name="twitter:title" content="{{config.title}}">
+    <meta name="twitter:description" content="{{config.description}}">
+    <meta name="twitter:image" content="{{config.domain}}/images/profile-robsongajunior.jpg">
+
+    <!-- CANONICAL -->
     <link rel="canonical" href="{{config.domain}}" />
 
+    <!-- STYLE -->
     <link rel="stylesheet" href="/css/vendor/prism.css" />
     <link rel="stylesheet" href="/css/main.css" />
 </head>
