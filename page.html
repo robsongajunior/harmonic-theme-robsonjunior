@@ -1,28 +1,193 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ page.metadata.title }} - {{ config.title }}</title>
-    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8" />
+
+    <title>{{page.metadata.title}} - {{config.title}}</title>
+
+    <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta property="og:image" content="http://es6rocks.com/images/es6rocks.png" />
-    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Core Meta Data -->
+    <meta name="author" content="{{config.author}}">
+    <meta name="description" content="{{config.description}}">
+    <meta name="keywords" content="Robson Júnior, carreira, palestras, JavaScript, JS, ECMAScript, ES6, Harmonic, front-end">
+
+    <!-- O.G -->
+    <meta property="og:description" content="{{page.metadata.description}}">
+    <meta property="og:image" content="{{config.domain}}/images/share/profile-robsongajunior.jpg">
+    <meta property="og:site_name" content="robsonjunior">
+    <meta property="og:title" content="{{config.name}} - {{page.metadata.title}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{config.domain}}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{config.domain}}">
+    <meta name="twitter:creator" content="{{config.author}}">
+    <meta name="twitter:title" content="{{config.name}} - {{page.metadata.title}}">
+    <meta name="twitter:description" content="{{page.metadata.description}}">
+    <meta name="twitter:image" content="{{config.domain}}/images/profile-robsongajunior.jpg">
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="{{config.domain}}" />
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/vendor/prism.css" />
 </head>
 <body>
-{% include "partials/navigation.html" %}
-<body>
-	<header class="postContent__title">
-	    <h2>
-	      {{ page.metadata.title }}
-	    </h2>
-	</header>
+    <figure id="mainBanner" class="main-banner internal-banner" data-banner-src="../../images/main-banner.jpg" data-banner-alt="Robson Junior Cover | Javascript"></figure>
 
-	<article class="postContent">
-		{{ page.content }}
 
-		{% include "partials/disqus.html" %}
-	</article>	
+    <main id="main">
+        {% include "partials/profileBar.html" %}
 
-	{% include "partials/footer.html" %}
+
+        <section class="wrap-content content-job">
+            <article class="content-right">
+                <h2>#sobre</h2>
+                
+                <p>
+                    Estudante de Análise e Desenvolvimento de Sistemas na Faculdade de Tecnologia SenacRS,
+                    membro da Organização JSRocks, Analísta e Developer na empresa Terra Networks S/A.
+                    Possui 24 anos de idade, atua na área há 4 anos e atualmente reside na imensidão da Weblândia(hahaha) / Cidade Baixa - Porto Alegre.
+                </p>
+            </article>
+
+
+            <article class="content-left">
+                <h2>#objetivo</h2>
+
+                <p>
+                    Seguir na jornada de migração que vem acontecendo, do FrontEnd para o BackEnd
+                    Em alguns anos deseja ter conhecimento suficiente para poder defender a empresa
+                    junto com o time de SI.
+                </p>
+            </article>
+
+
+            <article class="content-right">
+                <h2>#skill</h2>
+
+                <div id="skills">
+                    <div id="sk-html">
+                        <span class="skill-bar skill-bar-60">HTML</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="sk-css">
+                        <span class="skill-bar skill-bar-60">CSS/<i>pre-processadores</i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="sk-js">
+                        <span class="skill-bar skill-bar-75">JavaScript</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="sk-py">
+                        <span class="skill-bar skill-bar-15">Python</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="sk-bh">
+                        <span class="skill-bar skill-bar-7">Bash</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="sk-linux">
+                        <span class="skill-bar skill-bar-100">Linux / <i>usário dia a dia (OS Default)</i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </article>
+            
+
+            <article class="content-left">
+                <h2>#curriculum</h2>
+
+
+                <h3>
+                    <a href="https://www.terra.com.br/" target="_blank" title="Terra Networks S/A - Notícias">Terra Networks</a> / <i>atualmente</i>
+                </h3>
+                
+                <p>
+                    <b>início:</b> 19.02.2014 - <b>cargo:</b> programador
+                    <br>
+                    <b>início:</b> 01.10.2015 - <b>cargo:</b> analísta desenvolvedor web
+                </p>
+        
+                <ul class="project-list">
+                    <li class="project-item">
+                        <b>Ozone Funcional Tests</b>: Escrito em Python e usando SeleniumWebdriver + Unittest, conseguimos ter ganhos de 30% menos problemas a cada deploy,
+                        integrado ao deploy automatizado conseguimos ter o controle do que está e não está funcionando antes de ir para produção.
+                        Arquiteura modularizada trabalhando com um remote selenium server. Para facilitar a vida dos frontenders, pude integrar ao grunt escrevendo uma task
+                        que dispara os testes remoto.
+                    </li>
+                    
+                    <li class="project-item">
+                        <a href="https://correo.terra.com.ar" target="_blank" title="Terra Mail">Ozone Webmail Latam</a>: Nova interface para o webmail do Terra,
+                        mais moderna com novas tecnologias FrontEnd, mudança na API de consumo voltada para performance, pudemos também separar a parte de renderização
+                        do backend além de trazermos o produto para o conceito Single Page Application,
+                        amenizando cargas no backend. Produto já em produção para Argentina, Colombia, Chile, Peru, Venezuela, EUA, México.
+                    </li>
+                    
+                    <li class="project-item">
+                        <a href="chat.terra.com.br" target="_blank" title="">Terra Chat</a>: Novo chat do Terra matando tecnologias como Servidor Ejabberd, protocolo XMPP e Erlang,
+                        trazendo para novas tecnologias como Firebase e alguns fluxos em Python. Trazendo uma redução enorme de custo para empresa e ganhos na autonomia
+                        do desenvolvimento separando frontend do backend.
+                    </li>
+                    
+                    <li class="project-item">
+                        <a href="https://servicos.terra.com.br/" target="_blank" title="Serviços Terra">Terra Serviços</a>: Reformulação do visual da vitrine virtual do Terra.
+                    </li>
+                
+                    <li class="project-item">
+                        <a href="https://esportes.terra.com.br/sao-paulo/as-moscas-audax-faz-4-a-2-no-sao-paulo-e-impoe-primeira-derrota-de-ceni,8a5f987b855102a56387021a872fee7aydsvg7u1.html" target="_blank" title="StickAd">StickAd</a>: Solução
+                        FontEnd voltado para aumento de visualização das publicidades, não podendo revelar o ganho mas um simples JavaScript teve ganhos significativos chegando a mais de 30% available.
+                    </li>
+                </ul>
+
+
+                <hr>
+
+
+                <h3>
+                    <a href="https://www.studiogt.com.br/" target="_blank" title="">StudioGT</a>
+                </h3>
+                
+                <p>
+                    <b>início:</b> 01.10.2013 - <b>fim:</b> 12.02.2014 - <b>cargo:</b> frontend developer
+                </p>
+
+
+                <hr>
+
+
+                <h3>
+                    <a href="http://interative.cc/old/" target="_blank" title="Agência Digital Interative Studio">Interative Studio</a>
+                </h3>
+                
+                <p>
+                    <b>início:</b> 13.01.2013 - <b>fim:</b> 28.09.2013 - <b>cargo:</b> frontend developer / <i>free-lancer</i>
+                </p>
+
+
+                <hr>
+
+
+                <h3>
+                    <a href="http://www.add.digital/" target="_blank" title="ADD - Agência Design Digital">ADD</a>
+                </h3>
+
+                <p>
+                    <b>início:</b> 01.08.2012 - <b>fim:</b> 12.01.2013 - <b>cargo:</b> frontend developer
+                </p>
+            </article>
+
+            <article class="content-right">
+                
+            </article>
+        </section>
+
+        <div class="clearfix"></div>
+    </main>
+
+    {% include "partials/footer.html" %}
 </body>
 </html>
