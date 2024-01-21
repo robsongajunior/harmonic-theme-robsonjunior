@@ -1,3 +1,4 @@
 # harmonic-theme-robsonjunior [deprecated]
 
-> new website [robsonjunior.dev](https://www.robsonjunior.dev/)
+- Site [robsonjunior.dev](https://www.robsonjunior.dev/)
+- GitHub [repository](https://github.com/robsongajunior/robsonjunior.dev)
